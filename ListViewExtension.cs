@@ -47,6 +47,8 @@ namespace MongoDBManagementStudio
 
         public static void RefreshUI(ObservableCollection<FieldViewModel> headers)
         {
+            if (_gridView == null) return; //testing scenario
+
             int count = 0;
             _gridView.Columns.Clear();
             foreach (FieldViewModel header in headers)

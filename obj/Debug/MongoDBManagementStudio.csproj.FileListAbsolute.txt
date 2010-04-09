@@ -21,3 +21,6 @@ c:\Projects\Spikes\MongoDBManagementStudio\obj\Debug\MongoDBManagementStudio.exe
 c:\Projects\Spikes\MongoDBManagementStudio\obj\Debug\MongoDBManagementStudio.pdb
 c:\Projects\Spikes\MongoDBManagementStudio\bin\Debug\MongoDB.Driver.dll
 c:\Projects\Spikes\MongoDBManagementStudio\bin\Debug\MongoDB.Driver.pdb
+c:\Projects\Spikes\MongoDBManagementStudio\bin\Debug\nunit.framework.dll
+c:\Projects\Spikes\MongoDBManagementStudio\bin\Debug\Rhino.Mocks.dll
+c:\Projects\Spikes\MongoDBManagementStudio\bin\Debug\Rhino.Mocks.xml

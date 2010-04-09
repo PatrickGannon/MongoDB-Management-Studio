@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MongoDB.Driver;
+using MongoDBManagementStudio.Model;
 
 namespace MongoDBManagementStudio.ViewModel
 {
@@ -23,14 +26,6 @@ namespace MongoDBManagementStudio.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        public string Welcome
-        {
-            get
-            {
-                return "Welcome to MVVM Light";
-            }
-        }
-
         public RelayCommand ButtonCommand
         {
             get; private set;
@@ -56,15 +51,13 @@ namespace MongoDBManagementStudio.ViewModel
             Port = "27017";
             Database = string.Empty;
             Headers = new ObservableCollection<FieldViewModel>();
-                          //{
-                          //    new FieldViewModel() {FieldName = "a"}
-                          //};
-
             this.ButtonCommand = new RelayCommand(() =>
                                                       {
                                                           RunQuery();
                                                       }
             );
+            //TODO: Remove this hack: default query factory
+            MongoQueryFactory = new MongoDbCSharpQueryFactory();
         }
 
         public ObservableCollection<ItemViewModel> Items
@@ -72,84 +65,65 @@ namespace MongoDBManagementStudio.ViewModel
             get; private set;
         }
 
+        public IMongoQueryFactory MongoQueryFactory
+        {
+            set
+            {
+                _mongoQueryFactory = value;
+            }
+        }
+
         public string Server { get; set; }
         public string Database { get; set; }
         public string Query { get; set; }
         public string Port { get; set; }
         public ObservableCollection<FieldViewModel> Headers { get; private set; }
+        private IMongoQueryFactory _mongoQueryFactory = null;
 
         private void RunQuery()
         {
-            if (Database == string.Empty)
-            {
-                MessageBox.Show("You must specify a database");
-                return;
-            }
+            IMongoQuery mongoQuery = _mongoQueryFactory.BuildQuery();
+            IEnumerable documents = null;
 
-            if (Query == string.Empty)
-            {
-                MessageBox.Show("You must specify a query");
-                return;
-            }
-
-            Mongo db = new Mongo(string.Format("Server={0}:{1}", Server, Port));
-
-            db.Connect();
-
-            //Document query = new Document(); 
-            //query["field1"] = 10; 
-
-            ICursor cursor = null;
             try
             {
-                string database = Database;
+                documents = mongoQuery.RunQuery(Server, Database, Port, Query);
 
-                string[] queryParts = Query.Split(':');
-
-                if (queryParts.Length < 2)
-                {
-                    MessageBox.Show("Queries must be in the format: {collection}:{where} where {collection} is the name of your collection and {where} is your javascript query condition");
-                    return;
-                }
-
-                string collection = queryParts[0];
-                string query = queryParts[1];
-                string where = query;
-                cursor = db[database][collection].Find(where);
-                //Document d = db[database].SendCommand("db.test.find();");
                 Headers.Clear();
                 Items.Clear();
 
-                foreach (Document document in cursor.Documents)
+                foreach (IDictionary document in documents)
                 {
-                    ItemViewModel model = new ItemViewModel(Headers); // {Name = "my test"};
+                    ItemViewModel model = new ItemViewModel(Headers);
 
                     foreach (string key in document.Keys)
                     {
-                        //if (!Headers.Contains(key))
-                        //    Headers.Add(key);
                         string k = key;
                         if (Headers.SingleOrDefault(field => field.FieldName == k) == null)
-                            Headers.Add(new FieldViewModel() {FieldName = key} );
+                            Headers.Add(new FieldViewModel() {FieldName = key});
 
                         model.Data[key] = document[key].ToString();
                     }
 
-                    //Items.Add(new ItemViewModel() { Name = "Query results", Description = document["a"].ToString() });
-
                     Items.Add(model);
                 }
-                //MessageBox.Show("Headers: " + headers.Count);
+
                 ListViewExtension.RefreshUI(Headers);
+            }
+            catch (QueryValidationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while executing the query: " + ex);
+                return;
             }
             finally
             {
-                if (cursor != null)
-                    cursor.Dispose();
-
-                db.Disconnect();
+                mongoQuery.Dispose();
             }
-
         }
 
         ////public override void Cleanup()

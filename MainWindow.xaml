@@ -19,15 +19,6 @@
     </Window.Resources>
 
     <Grid x:Name="LayoutRoot">
-        <!--        
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding Welcome}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
-        -->
         <Button Command="{Binding ButtonCommand}" Height="23" HorizontalAlignment="Left" Margin="12,47,0,0" Name="button1" VerticalAlignment="Top" Width="75">Run Query</Button>
         <!--
         <ListView Margin="8,140,12,12" ItemsSource="{Binding Items}">
