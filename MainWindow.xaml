@@ -6,7 +6,7 @@
         xmlns:mm="clr-namespace:MongoDBManagementStudio"
         mc:Ignorable="d"
         Height="465"
-        Width="789"
+        Width="1032"
         Title="MongoDB Management Studio"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
@@ -19,36 +19,32 @@
     </Window.Resources>
 
     <Grid x:Name="LayoutRoot">
-        <Button Command="{Binding ButtonCommand}" Height="23" HorizontalAlignment="Left" Margin="12,47,0,0" Name="button1" VerticalAlignment="Top" Width="75">Run Query</Button>
-        <!--
-        <ListView Margin="8,140,12,12" ItemsSource="{Binding Items}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Path=Name}" />
-                    <GridViewColumn Header="Description" Width="120" DisplayMemberBinding="{Binding Path=Description}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        -->
-        <ListView Name="queryResults" Margin="8,140,12,12" mm:ListViewExtension.MatrixSource="{Binding Headers}" ItemsSource="{Binding Items}" />
-        <TextBox Height="87" Margin="115,47,12,0" Name="textBox1" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="176*" />
+            <ColumnDefinition Width="834*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1" Command="{Binding RunQueryCommand}" Height="23" HorizontalAlignment="Left" Margin="12,47,0,0" Name="button1" VerticalAlignment="Top" Width="75">Run Query</Button>
+        <ListView Grid.Column="1" Name="queryResults" Margin="8,140,12,12" mm:ListViewExtension.MatrixSource="{Binding Headers}" ItemsSource="{Binding Items}" />
+        <TextBox Grid.Column="1" Height="87" Margin="115,47,12,0" Name="textBox1" VerticalAlignment="Top">
             <TextBox.Text>
                 <Binding Path="Query" />
             </TextBox.Text>
         </TextBox>
-        <TextBlock Height="20" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" VerticalAlignment="Top" Width="46" Text="Server:" />
-        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,9,583,0" Name="textBox2" VerticalAlignment="Top" Width="120">
+        <TextBlock Grid.Column="1" Height="20" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" VerticalAlignment="Top" Width="46" Text="Server:" />
+        <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="80,8,0,0" Name="textBox2" VerticalAlignment="Top" Width="120">
             <TextBox.Text>
                 <Binding Path="Server" />
             </TextBox.Text>
         </TextBox>
-        <TextBlock Height="21" HorizontalAlignment="Left" Margin="206,11,0,0" Name="textBlock3" Text="Port:" VerticalAlignment="Top" Width="64" />
-        <TextBox Height="23" Margin="276,9,371,0" Name="textBox4" Text="{Binding Path=Port}" VerticalAlignment="Top" />
-        <TextBlock Height="21" HorizontalAlignment="Right" Margin="0,11,288,0" Name="textBlock2" VerticalAlignment="Top" Width="64" Text="Database:" />
-        <TextBox Height="23" Margin="0,9,162,0" Name="textBox3" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120">
+        <TextBlock Grid.Column="1" Height="21" HorizontalAlignment="Left" Margin="217,10,0,0" Name="textBlock3" Text="Port:" VerticalAlignment="Top" Width="53" />
+        <TextBox Grid.Column="1" Height="23" Margin="276,9,371,0" Name="textBox4" Text="{Binding Path=Port}" VerticalAlignment="Top" />
+        <TextBlock Grid.Column="1" Height="21" HorizontalAlignment="Right" Margin="0,11,288,0" Name="textBlock2" VerticalAlignment="Top" Width="64" Text="Database:" />
+        <TextBox Grid.Column="1" Height="23" Margin="0,9,162,0" Name="textBox3" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120">
             <TextBox.Text>
                 <Binding Path="Database" />
             </TextBox.Text>
         </TextBox>
+        <ListBox Margin="0,36,0,12" Name="collections" ItemsSource="{Binding Collections}" />
+        <Button Height="23" Margin="9,7,9,0" Name="button2" VerticalAlignment="Top" Command="{Binding ShowCollectionsCommand}">Show Collections</Button>
     </Grid>
 </Window>

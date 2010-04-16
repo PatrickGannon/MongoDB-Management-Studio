@@ -26,10 +26,8 @@ namespace MongoDBManagementStudio.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        public RelayCommand ButtonCommand
-        {
-            get; private set;
-        }
+        public RelayCommand RunQueryCommand { get; private set; }
+        public RelayCommand ShowCollectionsCommand { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -51,13 +49,12 @@ namespace MongoDBManagementStudio.ViewModel
             Port = "27017";
             Database = string.Empty;
             Headers = new ObservableCollection<FieldViewModel>();
-            this.ButtonCommand = new RelayCommand(() =>
-                                                      {
-                                                          RunQuery();
-                                                      }
-            );
+            RunQueryCommand = new RelayCommand(() => { RunQuery(); });
+            ShowCollectionsCommand = new RelayCommand(() => ShowCollections() );
+            
             //TODO: Remove this hack: default query factory
             MongoQueryFactory = new MongoDbCSharpQueryFactory();
+            Collections = new ObservableCollection<string>();
         }
 
         public ObservableCollection<ItemViewModel> Items
@@ -79,6 +76,7 @@ namespace MongoDBManagementStudio.ViewModel
         public string Port { get; set; }
         public ObservableCollection<FieldViewModel> Headers { get; private set; }
         private IMongoQueryFactory _mongoQueryFactory = null;
+        public ObservableCollection<string> Collections { get; private set; }
 
         private void RunQuery()
         {
@@ -124,6 +122,17 @@ namespace MongoDBManagementStudio.ViewModel
             {
                 mongoQuery.Dispose();
             }
+        }
+
+        private void ShowCollections()
+        {
+            IMongoQuery query = _mongoQueryFactory.BuildQuery();
+            IList<string> collections = query.GetCollections(Server, Database, Port);
+
+            Collections.Clear();
+
+            foreach (string collection in collections)
+                Collections.Add(collection);
         }
 
         ////public override void Cleanup()

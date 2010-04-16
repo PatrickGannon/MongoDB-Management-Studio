@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MongoDB.Driver;
 
 namespace MongoDBManagementStudio.Model
@@ -24,14 +25,17 @@ namespace MongoDBManagementStudio.Model
             _db.Connect();
 
             string[] queryParts = query.Split(':');
-
-            if (queryParts.Length < 2)
-                throw new QueryValidationException("Queries must be in the format: {collection}:{where} where {collection} is the name of your collection and {where} is your javascript query condition");
-
             string collection = queryParts[0];
-            string where = queryParts[1];;
-            _cursor = _db[database][collection].Find(where);
-            
+
+            if (queryParts.Length > 1)
+            {
+                string where = queryParts[1];
+
+                _cursor = _db[database][collection].Find(where);
+            }
+            else
+                _cursor = _db[database][collection].FindAll();
+
             return _cursor.Documents;
             //Document d = db[database].SendCommand("db.test.find();");
         }
@@ -43,6 +47,37 @@ namespace MongoDBManagementStudio.Model
 
             if (_db != null)
                 _db.Disconnect();
+        }
+
+        public IList<string> GetCollections(string server, string database, string port)
+        {
+            _db = new Mongo(string.Format("Server={0}:{1}", server, port));
+            _db.Connect();
+
+            IList<String> collectionNames = _db[database].GetCollectionNames();
+
+            //Reconsider? Just because you can do something with one line of code doesn't mean you should (remove database prefixes)
+            //IList<String> ret = collectionNames.Select(
+            //    (c, i) => c.IndexOf(".") > 1 && c.IndexOf(".") != (c.Length - 1) ? c.Substring(c.IndexOf(".") + 1) : c).ToList();
+
+            List<String> filteredCollections = new List<string>();
+            var hiddenCollectionCriteria = new string[] {"cubicle", "tmp.", ".$", "system.indexes"};
+
+            foreach (string collectionName in collectionNames)
+            {
+                if (!hiddenCollectionCriteria.Any(criteria => collectionName.Contains(criteria)))
+                {
+                    int periodIndex = collectionName.IndexOf(".");
+                    string collection = collectionName;
+
+                    if (periodIndex >= 0 && periodIndex != (collectionName.Length - 1))
+                        collection = collectionName.Substring(collectionName.IndexOf(".") + 1);
+
+                    filteredCollections.Add(collection);
+                }
+            }
+
+            return filteredCollections;
         }
     }
 }
