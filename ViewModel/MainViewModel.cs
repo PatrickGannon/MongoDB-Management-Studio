@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MongoDB.Driver;
 using MongoDBManagementStudio.Model;
+using MongoDBManagementStudio.Properties;
 
 namespace MongoDBManagementStudio.ViewModel
 {
@@ -52,14 +53,34 @@ namespace MongoDBManagementStudio.ViewModel
             RunQueryCommand = new RelayCommand(() => { RunQuery(); });
             ShowCollectionsCommand = new RelayCommand(() => ShowCollections() );
             
-            //TODO: Remove this hack: default query factory
-            MongoQueryFactory = new MongoDbCSharpQueryFactory();
             Collections = new ObservableCollection<string>();
         }
 
-        public ObservableCollection<ItemViewModel> Items
+        public string Server { get; set; }
+        public string Database { get; set; }
+        public string Query { get; set; }
+        public string Port { get; set; }
+        public ObservableCollection<ItemViewModel> Items { get; private set; }
+        public ObservableCollection<FieldViewModel> Headers { get; private set; }
+        //TODO: Remove these hack: default query factory and user message service
+        private IMongoQueryFactory _mongoQueryFactory = new MongoDbCSharpQueryFactory();
+        private IUserMessageService _userMessageService = new UserMessageService();
+        public ObservableCollection<string> Collections { get; private set; }
+        private string _numberOfResults = string.Empty;
+
+        public string NumberOfResults 
         {
-            get; private set;
+            get { return _numberOfResults; }
+            private set
+            {
+                if (_numberOfResults == value)
+                    return;
+
+                var oldValue = _numberOfResults;
+                _numberOfResults = value;
+
+                RaisePropertyChanged("NumberOfResults", oldValue, value, true);
+            }
         }
 
         public IMongoQueryFactory MongoQueryFactory
@@ -70,13 +91,13 @@ namespace MongoDBManagementStudio.ViewModel
             }
         }
 
-        public string Server { get; set; }
-        public string Database { get; set; }
-        public string Query { get; set; }
-        public string Port { get; set; }
-        public ObservableCollection<FieldViewModel> Headers { get; private set; }
-        private IMongoQueryFactory _mongoQueryFactory = null;
-        public ObservableCollection<string> Collections { get; private set; }
+        public IUserMessageService UserMessageService
+        {
+            set
+            {
+                _userMessageService = value;
+            }
+        }
 
         private void RunQuery()
         {
@@ -106,16 +127,18 @@ namespace MongoDBManagementStudio.ViewModel
                     Items.Add(model);
                 }
 
+                NumberOfResults = string.Format("{0}: {1} docs", DateTime.Now.ToString("HH:mm:ss"), Items.Count);
+
                 ListViewExtension.RefreshUI(Headers);
             }
             catch (QueryValidationException ex)
             {
-                MessageBox.Show(ex.Message);
+                _userMessageService.ShowMessage(ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while executing the query: " + ex);
+                _userMessageService.ShowMessage("An error occurred while executing the query: " + ex);
                 return;
             }
             finally
@@ -126,6 +149,12 @@ namespace MongoDBManagementStudio.ViewModel
 
         private void ShowCollections()
         {
+            if (Database == string.Empty)
+            {
+                _userMessageService.ShowMessage("You must specify a non-empty database name");
+                return;
+            }
+
             IMongoQuery query = _mongoQueryFactory.BuildQuery();
             IList<string> collections = query.GetCollections(Server, Database, Port);
 

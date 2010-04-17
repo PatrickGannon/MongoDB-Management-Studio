@@ -55,12 +55,7 @@ namespace MongoDBManagementStudio.Model
             _db.Connect();
 
             IList<String> collectionNames = _db[database].GetCollectionNames();
-
-            //Reconsider? Just because you can do something with one line of code doesn't mean you should (remove database prefixes)
-            //IList<String> ret = collectionNames.Select(
-            //    (c, i) => c.IndexOf(".") > 1 && c.IndexOf(".") != (c.Length - 1) ? c.Substring(c.IndexOf(".") + 1) : c).ToList();
-
-            List<String> filteredCollections = new List<string>();
+            var filteredCollections = new List<string>();
             var hiddenCollectionCriteria = new string[] {"cubicle", "tmp.", ".$", "system.indexes"};
 
             foreach (string collectionName in collectionNames)

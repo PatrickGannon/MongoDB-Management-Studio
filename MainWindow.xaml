@@ -46,5 +46,12 @@
         </TextBox>
         <ListBox Margin="0,36,0,12" Name="collections" ItemsSource="{Binding Collections}" />
         <Button Height="23" Margin="9,7,9,0" Name="button2" VerticalAlignment="Top" Command="{Binding ShowCollectionsCommand}">Show Collections</Button>
+        <TextBlock Grid.Column="1" Height="21" HorizontalAlignment="Left" Margin="6,113,0,0" Name="textBlock4" VerticalAlignment="Top" Width="103" Text="{Binding NumberOfResults}" FontSize="10">
+            <!--
+            <TextBlock.Text>
+                <Binding Path="NumberOfResults" />
+            </TextBlock.Text>
+            -->
+        </TextBlock>
     </Grid>
 </Window>

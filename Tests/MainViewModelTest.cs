@@ -64,5 +64,29 @@ namespace MongoDBManagementStudio.Tests
             //Then
             Assert.AreEqual(2, viewModel.Collections.Count);
         }
+
+        [Test]
+        public void ShouldShowErrorWhenShowingCollectionsWithNoDatabaseSpecified()
+        {
+            //Given
+            IMongoQueryFactory queryFactory = MockRepository.GenerateStub<IMongoQueryFactory>();
+            IUserMessageService messageService = MockRepository.GenerateMock<IUserMessageService>();
+
+            MainViewModel viewModel = new MainViewModel()
+            {
+                Server = "localhost",
+                Database = "",
+                Port = "27017",
+                Query = "folks:this.middle_initial == 'Q'",
+                MongoQueryFactory = queryFactory,
+                UserMessageService = messageService
+            };
+
+            //When
+            viewModel.ShowCollectionsCommand.Execute(null);
+
+            //Then
+            messageService.AssertWasCalled(service => service.ShowMessage("You must specify a non-empty database name"));
+        }
     }
 }
