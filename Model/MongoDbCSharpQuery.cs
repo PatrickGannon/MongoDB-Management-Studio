@@ -29,9 +29,22 @@ namespace MongoDBManagementStudio.Model
 
             if (queryParts.Length > 1)
             {
+                Document spec = new Document();
                 string where = queryParts[1];
+                const string LIMIT_TEXT = " limit ";
+                int limitIndex = where.IndexOf(LIMIT_TEXT);
+                int limit = 0;
 
-                _cursor = _db[database][collection].Find(where);
+                if (limitIndex > -1)
+                {
+                    string limitText;
+
+                    if (int.TryParse(where.Substring(limitIndex + LIMIT_TEXT.Length), out limit))
+                        where = where.Substring(0, limitIndex);
+                }
+
+                spec.Append("$where", new Code(where));
+                _cursor = _db[database][collection].Find(spec, limit, 0);
             }
             else
                 _cursor = _db[database][collection].FindAll();

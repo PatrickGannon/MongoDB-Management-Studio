@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="mongodbmanagementstudio.exe">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'MongoDBManagementStudio.exe' with a strong name key.</Issue>
       </Message>
      </Messages>
@@ -15,28 +15,28 @@
        <Types>
         <Type Name="ListViewExtension" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Certainty="90" Level="Error">Remove the public constructors from 'ListViewExtension'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#GetMatrixSource(System.Windows.DependencyObject)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+            <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
              <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Spikes\MongoDBManagementStudio" File="ListViewExtension.cs" Line="24">In method 'ListViewExtension.GetMatrixSource(DependencyObject)', consider providing a more meaningful name than parameter name 'd'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#RefreshUI(System.Collections.ObjectModel.ObservableCollection`1&lt;MongoDBManagementStudio.ViewModel.FieldViewModel&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio" File="ListViewExtension.cs" Line="56">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'ListViewExtension.RefreshUI(ObservableCollection&lt;FieldViewModel&gt;)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SetMatrixSource(System.Windows.DependencyObject,System.Collections.ObjectModel.ObservableCollection`1&lt;MongoDBManagementStudio.ViewModel.FieldViewModel&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+            <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
              <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Spikes\MongoDBManagementStudio" File="ListViewExtension.cs" Line="29">In method 'ListViewExtension.SetMatrixSource(DependencyObject, ObservableCollection&lt;FieldViewModel&gt;)', consider providing a more meaningful name than parameter name 'd'.</Issue>
             </Message>
            </Messages>
@@ -47,42 +47,42 @@
          <Members>
           <Member Name="#button1" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.button1' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#button2" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.button2' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#collections" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.collections' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#LayoutRoot" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.LayoutRoot' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#queryResults" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.queryResults' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Name="Parameter" Certainty="95" Level="Warning">'target', a parameter, is cast to type 'Button' multiple times in method 'MainWindow.IComponentConnector.Connect(int, object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
              <Issue Name="Parameter" Certainty="95" Level="Warning">'target', a parameter, is cast to type 'TextBlock' multiple times in method 'MainWindow.IComponentConnector.Connect(int, object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
              <Issue Name="Parameter" Certainty="95" Level="Warning">'target', a parameter, is cast to type 'TextBlock' multiple times in method 'MainWindow.IComponentConnector.Connect(int, object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
@@ -95,56 +95,56 @@
           </Member>
           <Member Name="#textBlock1" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBlock1' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBlock2" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBlock2' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBlock3" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBlock3' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBlock4" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBlock4' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBox1" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBox1' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBox2" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBox2' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBox3" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBox3' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#textBox4" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning">It appears that field 'MainWindow.textBox4' is never used or is only ever assigned to. Use this field or remove it.</Issue>
             </Message>
            </Messages>
@@ -157,17 +157,17 @@
        <Types>
         <Type Name="MongoDbCSharpQuery" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Db' in type name 'MongoDbCSharpQuery' by changing it to 'DB'.</Issue>
           </Message>
-          <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Name="ProvideDisposeBool" Certainty="95" Level="Error">Provide an overridable implementation of Dispose(bool) on 'MongoDbCSharpQuery' or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="90" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="11">'MongoDbCSharpQuery.MongoDbCSharpQuery()' initializes field 'MongoDbCSharpQuery._cursor' of type 'ICursor' to null. Remove this initialization because it will be done automatically by the runtime.</Issue>
              <Issue Certainty="90" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="12">'MongoDbCSharpQuery.MongoDbCSharpQuery()' initializes field 'MongoDbCSharpQuery._db' of type 'Mongo' to null. Remove this initialization because it will be done automatically by the runtime.</Issue>
             </Message>
@@ -175,37 +175,43 @@
           </Member>
           <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
-             <Issue Name="NotCalled" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="44">Change 'MongoDbCSharpQuery.Dispose()' to call 'GC.SuppressFinalize(object)'. This will prevent unnecessary finalization of the object once it has been disposed and it has fallen out of scope.</Issue>
+            <Message TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
+             <Issue Name="NotCalled" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="57">Change 'MongoDbCSharpQuery.Dispose()' to call 'GC.SuppressFinalize(object)'. This will prevent unnecessary finalization of the object once it has been disposed and it has fallen out of scope.</Issue>
             </Message>
-            <Message Id="_db" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="44">'MongoDbCSharpQuery' contains field 'MongoDbCSharpQuery._db' that is of IDisposable type: 'Mongo'. Change the Dispose method on 'MongoDbCSharpQuery' to call Dispose or Close on this field.</Issue>
+            <Message Id="_db" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="57">'MongoDbCSharpQuery' contains field 'MongoDbCSharpQuery._db' that is of IDisposable type: 'Mongo'. Change the Dispose method on 'MongoDbCSharpQuery' to call Dispose or Close on this field.</Issue>
             </Message>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
-             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="44">Modify 'MongoDbCSharpQuery.Dispose()' so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Issue>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="57">Modify 'MongoDbCSharpQuery.Dispose()' so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#GetCollections(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
-             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="54">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpQuery.GetCollections(string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="67">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpQuery.GetCollections(string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="65">'MongoDbCSharpQuery.GetCollections(string, string, string)' makes a call to 'string.IndexOf(string)' that does not explicitly provide a StringComparison. This should be replaced with a call to 'string.IndexOf(string, StringComparison)'.</Issue>
-             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="69">'MongoDbCSharpQuery.GetCollections(string, string, string)' makes a call to 'string.IndexOf(string)' that does not explicitly provide a StringComparison. This should be replaced with a call to 'string.IndexOf(string, StringComparison)'.</Issue>
+            <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="78">'MongoDbCSharpQuery.GetCollections(string, string, string)' makes a call to 'string.IndexOf(string)' that does not explicitly provide a StringComparison. This should be replaced with a call to 'string.IndexOf(string, StringComparison)'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="82">'MongoDbCSharpQuery.GetCollections(string, string, string)' makes a call to 'string.IndexOf(string)' that does not explicitly provide a StringComparison. This should be replaced with a call to 'string.IndexOf(string, StringComparison)'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#RunQuery(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="documents" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message Id="documents" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="23">'MongoDbCSharpQuery.RunQuery(string, string, string, string)' declares a variable, 'documents', of type 'IList&lt;DictionaryBase&gt;', which is never used or is only assigned to. Use this variable or remove it.</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="limitText" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="15">'MongoDbCSharpQuery.RunQuery(string, string, string, string)' declares a variable, 'limitText', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="22">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpQuery.RunQuery(string, string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="35">'MongoDbCSharpQuery.RunQuery(string, string, string, string)' makes a call to 'string.IndexOf(string)' that does not explicitly provide a StringComparison. This should be replaced with a call to 'string.IndexOf(string, StringComparison)'.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="16">Replace the call to 'string.operator ==(string, string)' in 'MongoDbCSharpQuery.RunQuery(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
              <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Model" File="MongoDbCSharpQuery.cs" Line="19">Replace the call to 'string.operator ==(string, string)' in 'MongoDbCSharpQuery.RunQuery(string, string, string, string)' with a call to 'String.IsNullOrEmpty'.</Issue>
             </Message>
@@ -215,22 +221,22 @@
         </Type>
         <Type Name="MongoDbCSharpQueryFactory" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Db' in type name 'MongoDbCSharpQueryFactory' by changing it to 'DB'.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="QueryValidationException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
            <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'QueryValidationException': protected QueryValidationException(SerializationInfo, StreamingContext).</Issue>
            <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'QueryValidationException': public QueryValidationException().</Issue>
            <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'QueryValidationException': public QueryValidationException(String, Exception).</Issue>
           </Message>
-          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
            <Issue Certainty="95" Level="Error">Add [Serializable] to 'QueryValidationException' as this type implements ISerializable.</Issue>
           </Message>
-          <Message TypeName="TypesShouldNotExtendCertainBaseTypes" Category="Microsoft.Design" CheckId="CA1058" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message TypeName="TypesShouldNotExtendCertainBaseTypes" Category="Microsoft.Design" CheckId="CA1058" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Name="System.ApplicationException" Certainty="75" Level="Error">Change the base type of 'QueryValidationException' so that it no longer extends 'ApplicationException'. This base exception type does not provide any additional value for framework classes. Extend 'System.Exception' or an existing unsealed exception type instead. Do not create a new exception base type unless there is specific value in enabling the creation of a catch handler for an entire class of exceptions.</Issue>
           </Message>
          </Messages>
@@ -243,13 +249,13 @@
          <Members>
           <Member Name="#ShouldGetDataFromLocalMongoDbServer()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+            <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="IntegrationTest.cs" Line="16">Correct the casing of 'Db' in member name 'IntegrationTest.ShouldGetDataFromLocalMongoDbServer()' by changing it to 'DB'.</Issue>
             </Message>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="IntegrationTest.cs" Line="16">The 'this' parameter (or 'Me' in Visual Basic) of 'IntegrationTest.ShouldGetDataFromLocalMongoDbServer()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="IntegrationTest.cs" Line="18">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'IntegrationTest.ShouldGetDataFromLocalMongoDbServer()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
@@ -260,21 +266,21 @@
          <Members>
           <Member Name="#ShouldPullInDataFromQueryProvider()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MainViewModelTest.cs" Line="17">The 'this' parameter (or 'Me' in Visual Basic) of 'MainViewModelTest.ShouldPullInDataFromQueryProvider()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ShouldShowCollections()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MainViewModelTest.cs" Line="44">The 'this' parameter (or 'Me' in Visual Basic) of 'MainViewModelTest.ShouldShowCollections()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ShouldShowErrorWhenShowingCollectionsWithNoDatabaseSpecified()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MainViewModelTest.cs" Line="70">The 'this' parameter (or 'Me' in Visual Basic) of 'MainViewModelTest.ShouldShowErrorWhenShowingCollectionsWithNoDatabaseSpecified()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
@@ -283,31 +289,41 @@
         </Type>
         <Type Name="MongoDbCSharpTest" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+          <Message Id="Db" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Db' in type name 'MongoDbCSharpTest' by changing it to 'DB'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#ShouldReturnAllDataFromCollection()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="50">The 'this' parameter (or 'Me' in Visual Basic) of 'MongoDbCSharpTest.ShouldReturnAllDataFromCollection()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
-            <Message Id="row" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message Id="row" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="69">'MongoDbCSharpTest.ShouldReturnAllDataFromCollection()' declares a variable, 'row', of type 'object', which is never used or is only assigned to. Use this variable or remove it.</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="52">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpTest.ShouldReturnAllDataFromCollection()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ShouldReturnCollectionsFromDatabase()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="17">The 'this' parameter (or 'Me' in Visual Basic) of 'MongoDbCSharpTest.ShouldReturnCollectionsFromDatabase()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="19">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpTest.ShouldReturnCollectionsFromDatabase()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ShouldReturnLimitedDataFromCollection()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="86">The 'this' parameter (or 'Me' in Visual Basic) of 'MongoDbCSharpTest.ShouldReturnLimitedDataFromCollection()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\Tests" File="MongoDbCSharpTest.cs" Line="88">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MongoDbCSharpTest.ShouldReturnLimitedDataFromCollection()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -321,14 +337,14 @@
          <Members>
           <Member Name="#Data" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
              <Issue Certainty="75" Level="Warning">Change 'ItemViewModel.Data' to be read-only by removing the property setter.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DataRow" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="Breaking">
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="ItemViewModel.cs" Line="27">Change 'List&lt;string&gt;' in 'ItemViewModel.DataRow' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
             </Message>
            </Messages>
@@ -339,34 +355,34 @@
          <Members>
           <Member Name="#MongoQueryFactory" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PropertiesShouldNotBeWriteOnly" Category="Microsoft.Design" CheckId="CA1044" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="PropertiesShouldNotBeWriteOnly" Category="Microsoft.Design" CheckId="CA1044" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Name="AddGetter" Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="89">Because property 'MainViewModel.MongoQueryFactory' is write-only, either add a property getter with an accessibility that is greater than or equal to its setter or convert this property into a method.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#RunQuery()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="139">Modify 'MainViewModel.RunQuery()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
             </Message>
-            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="130">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'MainViewModel.RunQuery()' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="130">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MainViewModel.RunQuery()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ShowCollections()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="NonBreaking">
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="NonBreaking">
              <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="152">Replace the call to 'string.operator ==(string, string)' in 'MainViewModel.ShowCollections()' with a call to 'String.IsNullOrEmpty'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#UserMessageService" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="PropertiesShouldNotBeWriteOnly" Category="Microsoft.Design" CheckId="CA1044" Status="Active" Created="2010-04-17 00:10:24Z" FixCategory="DependsOnFix">
+            <Message TypeName="PropertiesShouldNotBeWriteOnly" Category="Microsoft.Design" CheckId="CA1044" Status="Active" Created="2010-04-17 00:26:35Z" FixCategory="DependsOnFix">
              <Issue Name="AddGetter" Certainty="95" Level="Error" Path="c:\Projects\Spikes\MongoDBManagementStudio\ViewModel" File="MainViewModel.cs" Line="97">Because property 'MainViewModel.UserMessageService' is write-only, either add a property getter with an accessibility that is greater than or equal to its setter or convert this property into a method.</Issue>
             </Message>
            </Messages>
