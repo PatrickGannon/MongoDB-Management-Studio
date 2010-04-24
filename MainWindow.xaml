@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
         <Button Grid.Column="1" Command="{Binding RunQueryCommand}" Height="23" HorizontalAlignment="Left" Margin="12,47,0,0" Name="button1" VerticalAlignment="Top" Width="75">Run Query</Button>
         <ListView Grid.Column="1" Name="queryResults" Margin="8,140,12,12" mm:ListViewExtension.MatrixSource="{Binding Headers}" ItemsSource="{Binding Items}" />
-        <TextBox Grid.Column="1" Height="87" Margin="115,47,12,0" Name="textBox1" VerticalAlignment="Top">
+        <TextBox Grid.Column="1" Height="87" Margin="115,47,12,0" Name="textBox1" VerticalAlignment="Top" AcceptsReturn="True">
             <TextBox.Text>
                 <Binding Path="Query" />
             </TextBox.Text>
@@ -46,12 +46,7 @@
         </TextBox>
         <ListBox Margin="0,36,0,12" Name="collections" ItemsSource="{Binding Collections}" />
         <Button Height="23" Margin="9,7,9,0" Name="button2" VerticalAlignment="Top" Command="{Binding ShowCollectionsCommand}">Show Collections</Button>
-        <TextBlock Grid.Column="1" Height="21" HorizontalAlignment="Left" Margin="6,113,0,0" Name="textBlock4" VerticalAlignment="Top" Width="103" Text="{Binding NumberOfResults}" FontSize="10">
-            <!--
-            <TextBlock.Text>
-                <Binding Path="NumberOfResults" />
-            </TextBlock.Text>
-            -->
-        </TextBlock>
+        <TextBlock Grid.Column="1" Height="21" HorizontalAlignment="Left" Margin="6,113,0,0" Name="textBlock4" VerticalAlignment="Top" Width="103" Text="{Binding NumberOfResults}" FontSize="10" />
+        <Button Command="{Binding CopyToClipboardCommand}" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="12,76,0,0" Name="button3" VerticalAlignment="Top" Width="75">Copy Results</Button>
     </Grid>
 </Window>

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using MongoDB.Driver;
 
 namespace MongoDBManagementStudio.Model
@@ -22,7 +23,14 @@ namespace MongoDBManagementStudio.Model
             _db = new Mongo(string.Format("Server={0}:{1}", server, port));
             IList<DictionaryBase> documents = new List<DictionaryBase>();
 
-            _db.Connect();
+            try
+            {
+                _db.Connect();
+            }
+            catch (SocketException ex)
+            {
+                throw new UnknownServerException(string.Format("Unknown server: {0}:{1}", server, port), ex);
+            }
 
             string[] queryParts = query.Split(':');
             string collection = queryParts[0];
@@ -65,7 +73,15 @@ namespace MongoDBManagementStudio.Model
         public IList<string> GetCollections(string server, string database, string port)
         {
             _db = new Mongo(string.Format("Server={0}:{1}", server, port));
-            _db.Connect();
+
+            try
+            {
+                _db.Connect();
+            }
+            catch (SocketException ex)
+            {
+                throw new UnknownServerException(string.Format("Unknown server: {0}:{1}", server, port), ex);
+            }
 
             IList<String> collectionNames = _db[database].GetCollectionNames();
             var filteredCollections = new List<string>();

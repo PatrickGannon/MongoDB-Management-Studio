@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using GalaSoft.MvvmLight;
@@ -29,6 +30,7 @@ namespace MongoDBManagementStudio.ViewModel
     {
         public RelayCommand RunQueryCommand { get; private set; }
         public RelayCommand ShowCollectionsCommand { get; private set; }
+        public RelayCommand CopyToClipboardCommand { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -52,6 +54,7 @@ namespace MongoDBManagementStudio.ViewModel
             Headers = new ObservableCollection<FieldViewModel>();
             RunQueryCommand = new RelayCommand(() => { RunQuery(); });
             ShowCollectionsCommand = new RelayCommand(() => ShowCollections() );
+            CopyToClipboardCommand = new RelayCommand(() => CopyDataToClipboard());
             
             Collections = new ObservableCollection<string>();
         }
@@ -65,6 +68,7 @@ namespace MongoDBManagementStudio.ViewModel
         //TODO: Remove these hack: default query factory and user message service
         private IMongoQueryFactory _mongoQueryFactory = new MongoDbCSharpQueryFactory();
         private IUserMessageService _userMessageService = new UserMessageService();
+        private IClipboardService _clipboardService = new ClipboardService();
         public ObservableCollection<string> Collections { get; private set; }
         private string _numberOfResults = string.Empty;
 
@@ -85,18 +89,17 @@ namespace MongoDBManagementStudio.ViewModel
 
         public IMongoQueryFactory MongoQueryFactory
         {
-            set
-            {
-                _mongoQueryFactory = value;
-            }
+            set { _mongoQueryFactory = value; }
         }
 
         public IUserMessageService UserMessageService
         {
-            set
-            {
-                _userMessageService = value;
-            }
+            set { _userMessageService = value; }
+        }
+
+        public IClipboardService ClipboardService
+        {
+            set { _clipboardService = value; }
         }
 
         private void RunQuery()
@@ -136,6 +139,11 @@ namespace MongoDBManagementStudio.ViewModel
                 _userMessageService.ShowMessage(ex.Message);
                 return;
             }
+            catch (UnknownServerException ex)
+            {
+                _userMessageService.ShowMessage(ex.Message);
+                return;
+            }
             catch (Exception ex)
             {
                 _userMessageService.ShowMessage("An error occurred while executing the query: " + ex);
@@ -147,6 +155,39 @@ namespace MongoDBManagementStudio.ViewModel
             }
         }
 
+        private void CopyDataToClipboard()
+        {
+            var builder = new StringBuilder();
+
+            if (Items.Count == 0)
+            {
+                _userMessageService.ShowMessage("No results to copy - run a query first");
+                return;
+            }
+
+            foreach (FieldViewModel header in Headers)
+            {
+                builder.Append(header.FieldName + "\t");
+            }
+
+            builder.Append(Environment.NewLine);
+
+            foreach (ItemViewModel item in Items)
+            {
+                List<string> fields = item.DataRow;
+
+                foreach (string field in fields)
+                {
+                    builder.Append(field + "\t");
+                }
+
+                builder.Append(Environment.NewLine);
+            }
+
+            _clipboardService.SetText(builder.ToString());
+            _userMessageService.ShowMessage("Results copied to clipboard");
+        }
+
         private void ShowCollections()
         {
             if (Database == string.Empty)
@@ -156,12 +197,20 @@ namespace MongoDBManagementStudio.ViewModel
             }
 
             IMongoQuery query = _mongoQueryFactory.BuildQuery();
-            IList<string> collections = query.GetCollections(Server, Database, Port);
 
-            Collections.Clear();
+            try
+            {
+                IList<string> collections = query.GetCollections(Server, Database, Port);
 
-            foreach (string collection in collections)
-                Collections.Add(collection);
+                Collections.Clear();
+
+                foreach (string collection in collections)
+                    Collections.Add(collection);
+            }
+            catch (UnknownServerException ex)
+            {
+                _userMessageService.ShowMessage(ex.Message);
+            }
         }
 
         ////public override void Cleanup()

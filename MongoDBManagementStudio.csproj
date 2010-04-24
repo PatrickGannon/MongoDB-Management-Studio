@@ -107,13 +107,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ListViewExtension.cs" />
+    <Compile Include="Model\ClipboardService.cs" />
     <Compile Include="Model\IMongoQuery.cs" />
     <Compile Include="Model\IMongoQueryFactory.cs" />
     <Compile Include="Model\IUserMessageService.cs" />
     <Compile Include="Model\MongoDbCSharpQuery.cs" />
     <Compile Include="Model\MongoDbCSharpQueryFactory.cs" />
     <Compile Include="Model\QueryValidationException.cs" />
+    <Compile Include="Model\UnknownServerException.cs" />
     <Compile Include="Model\UserMessageService.cs" />
+    <Compile Include="Model\IClipboardService.cs" />
     <Compile Include="Tests\IntegrationTest.cs" />
     <Compile Include="Tests\MainViewModelTest.cs" />
     <Compile Include="Tests\MongoDbCSharpTest.cs" />

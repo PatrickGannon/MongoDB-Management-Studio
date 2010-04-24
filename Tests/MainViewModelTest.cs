@@ -88,5 +88,40 @@ namespace MongoDBManagementStudio.Tests
             //Then
             messageService.AssertWasCalled(service => service.ShowMessage("You must specify a non-empty database name"));
         }
+
+        [Test]
+        public void ShouldCopyDataToClipboard()
+        {
+            //Given
+            DictionaryBase doc1 = new Document() { { "first_name", "Bill" }, { "middle_initial", "Q" }, { "last_name", "Jackson" }, { "address", "744 Nottingham St." } };
+            DictionaryBase doc3 = new Document() { { "first_name", "Ronald" }, { "middle_initial", "Q" }, { "last_name", "Weasly" }, { "city", "Santa Rosa" } };
+            IList<DictionaryBase> documents = new List<DictionaryBase>() { doc1, doc3 };
+            IMongoQuery query = MockRepository.GenerateStub<IMongoQuery>();
+            query.Stub(q => q.RunQuery("localhost", "test", "27017", "folks:this.middle_initial == 'Q'")).Return(documents);
+            IMongoQueryFactory queryFactory = MockRepository.GenerateStub<IMongoQueryFactory>();
+            queryFactory.Stub(factory => factory.BuildQuery()).Return(query);
+            IClipboardService clipboardService = MockRepository.GenerateMock<IClipboardService>();
+            IUserMessageService messageService = MockRepository.GenerateMock<IUserMessageService>();
+
+            MainViewModel viewModel = new MainViewModel()
+            {
+                Server = "localhost",
+                Database = "test",
+                Port = "27017",
+                Query = "folks:this.middle_initial == 'Q'",
+                MongoQueryFactory = queryFactory,
+                ClipboardService = clipboardService,
+                UserMessageService = messageService
+            };
+
+            //When
+            viewModel.RunQueryCommand.Execute(null);
+            viewModel.CopyToClipboardCommand.Execute(null);
+
+            //Then
+            clipboardService.AssertWasCalled(clipboard => clipboard.SetText(
+                "last_name\tfirst_name\tmiddle_initial\taddress\tcity\t\r\nJackson\tBill\tQ\t744 Nottingham St.\t\t\r\nWeasly\tRonald\tQ\t\tSanta Rosa\t\r\n"));
+            messageService.AssertWasCalled(service => service.ShowMessage("Results copied to clipboard"));
+        }
     }
 }
