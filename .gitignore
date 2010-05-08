@@ -1,0 +1,11 @@
+_ReSharper.MongoDbManagementStudio
+_ReSharper.MongoDbManagementStudio/*
+MongDbQueryStudio.Test/obj/*
+MongDbQueryStudio.Test/bin/*
+MongoDbCSharpComposablePart/obj/*
+MongoDbCSharpComposablePart/bin/*
+MongoDbManagementStudio/obj/*
+MongoDbQueryStudio.Contracts/obj/*
+MongoDbQueryStudio.Contracts/bin/*
+*.resharper.user
+*.suo

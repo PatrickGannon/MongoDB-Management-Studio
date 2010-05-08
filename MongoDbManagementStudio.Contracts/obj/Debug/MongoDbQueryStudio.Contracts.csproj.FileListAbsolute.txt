@@ -1,0 +1,10 @@
+C:\DevProjects\MongoDbQueryStudio\MongoDbQueryStudio.Contracts\bin\Debug\MongoDbQueryStudio.Contracts.dll
+C:\DevProjects\MongoDbQueryStudio\MongoDbQueryStudio.Contracts\bin\Debug\MongoDbQueryStudio.Contracts.pdb
+C:\DevProjects\MongoDbQueryStudio\MongoDbQueryStudio.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\DevProjects\MongoDbQueryStudio\MongoDbQueryStudio.Contracts\obj\Debug\MongoDbQueryStudio.Contracts.dll
+C:\DevProjects\MongoDbQueryStudio\MongoDbQueryStudio.Contracts\obj\Debug\MongoDbQueryStudio.Contracts.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbQueryStudio.Contracts\bin\Debug\MongoDbQueryStudio.Contracts.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbQueryStudio.Contracts\bin\Debug\MongoDbQueryStudio.Contracts.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbQueryStudio.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\DevProjects\MongoDB-Management-Studio\MongoDbQueryStudio.Contracts\obj\Debug\MongoDbQueryStudio.Contracts.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbQueryStudio.Contracts\obj\Debug\MongoDbQueryStudio.Contracts.pdb

@@ -1,0 +1,12 @@
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDbManagementStudio.QueryDriver.CSharp.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDbManagementStudio.QueryDriver.CSharp.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDB.Driver.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDbManagementStudio.Contracts.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\System.ComponentModel.Composition.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDbManagementStudio.Contracts.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\MongoDB.Driver.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\System.ComponentModel.Composition.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\bin\Debug\System.ComponentModel.Composition.xml
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\obj\Debug\ResolveAssemblyReference.cache
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\obj\Debug\MongoDbManagementStudio.QueryDriver.CSharp.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.QueryDriver.CSharp\obj\Debug\MongoDbManagementStudio.QueryDriver.CSharp.pdb

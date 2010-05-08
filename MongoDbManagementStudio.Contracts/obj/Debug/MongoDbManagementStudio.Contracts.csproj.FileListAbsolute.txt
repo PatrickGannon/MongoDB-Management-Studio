@@ -1,0 +1,5 @@
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.Contracts\bin\Debug\MongoDbManagementStudio.Contracts.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.Contracts\bin\Debug\MongoDbManagementStudio.Contracts.pdb
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.Contracts\obj\Debug\MongoDbManagementStudio.Contracts.dll
+C:\DevProjects\MongoDB-Management-Studio\MongoDbManagementStudio.Contracts\obj\Debug\MongoDbManagementStudio.Contracts.pdb
